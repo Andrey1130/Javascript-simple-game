@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title>Sample Test Game</title>
+		
+		<style type="text/css">
+			
+			    DIV.blank{
+				    margin-top: 100px;
+				    /*text-align: center;*/
+				    margin-left:500;
+				}
+				DIV.sym {
+					margin-top: 10px;
+				    padding: 41Px;
+				    margin-left: 50px;
+				}
+				DIV.win{
+				    margin-left: 500;
+				}
+
+
+				img.sym{
+				    width: 100;
+				    height: 100;
+				}
+				img.win{
+				    width: 100;
+				    height: 100;
+				}
+			    
+		</style>
+	</head>
+	<body>
+		<div style="background-image:url('./images/Background.png');padding:5px;width:100%;height:100%;border:1px solid black;background-repeat:no-repeat;">
+			<!-- <div class="blank" >
+			    <img src="/Volumes/Data1/upwork task/sweden_test/test/images/blank.png" alter="center" />
+			</div> -->
+			
+				<div class="blank">
+					<img src="./images/blank.png" alter="center" style="width: 150px;height: 150px;" id="edit-save" />
+				
+
+				</div>
+				<div class="sym">
+					<!-- <img src="/Volumes/Data1/upwork task/sweden_test/test/images/sym1.png" alter="center" class="sym" id="1" onclick="showimg(1)" /> -->
+					<img src="./images/sym1.png" alter="center" class="sym" id="2" onclick="showimg(2)"/>
+					<img src="./images/sym2.png" alter="center" class="sym" id="2" onclick="showimg(2)"/>
+					<img src="./images/sym3.png" alter="center" class="sym" id="3" onclick="showimg(3)"/>
+					<img src="./images/sym4.png" alter="center"  class="sym" id="4" onclick="showimg(4)"/>
+					<img src="./images/sym5.png" alter="center"  class="sym" id="5" onclick="showimg(5)"/>
+					<img src="./images/sym6.png" alter="center"  class="sym" id="6"onclick="showimg(6)"/>
+					<img src="./images/sym7.png" alter="center"  class="sym" id="7" onclick="showimg(7)"/>
+					<img src="./images/sym8.png" alter="center" class="sym" id="8"  onclick="showimg(8)"/>
+					<img src="./images/sym9.png" alter="center"  class="sym" id="9" onclick="showimg(9)"/>
+
+
+				</div>
+				<div class="win">
+					<img src="./images/button.png" alter="center" class="win" id="win_img"  onclick="loadimg()" />
+				</div>
+
+			
+
+		</div>
+		<script type="text/javascript">
+			var sss = ""
+			var num ;
+			var digits ;
+			function showimg(selectedValue){
+				sss+=selectedValue;
+				digits = (""+parseInt(sss)).split("");
+
+				
+				console.log(digits)
+				
+			}
+			function loadimg(){
+				if (digits.length == 0 ){
+					alert("Please select numbers.");
+					return;
+				}
+				num = Math.floor(Math.random() * ((9-1)+1) + 1);
+				// alert(num);
+				// var inputs = document.myform;
+			 //    for(var i = 0; i < inputs.length; i++) {
+			 //        inputs[i].disabled = false;
+			 //    }
+
+			    var edit_save = document.getElementById("edit-save");
+
+
+			       edit_save.src = "/Volumes/Data1/upwork task/sweden_test/test/images/sym" + num + ".png";
+
+				if (parseInt(digits) == num) {
+					alert('Success!')					
+				} else {
+					alert('Losse!')
+				}
+				digits = [];
+				console.log(num);
+			}
+
+		</script>
+	</body>
+</html>
